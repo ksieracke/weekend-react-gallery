@@ -8,6 +8,7 @@ function GalleryList({gallery}){
     return(
         <div data-testId="galleryList">
             {gallery.map(pic=>(
+                
                 <GalleryItem key={pic.id} pic={pic} />
             ))}
         </div>

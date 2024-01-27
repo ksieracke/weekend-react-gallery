@@ -12,7 +12,9 @@ function GalleryItem({pic}){
      return(
         <div data-testID="galleryItem">
             <div onClick={togglePicAndDescription}>
-                <img src={pic.url} />
+               {showPic ?
+                <img src={pic.url} /> :<p>{pic.description}</p>
+               }
             </div>
         </div>
      )

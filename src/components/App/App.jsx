@@ -26,10 +26,8 @@ function App() {
     return (
       <div data-testid="app">
         <header>
-          <h1>React Gallery</h1>
+          <h1>The Many Faces of my Daughter Laura</h1>
         </header>
-
-        <p>The gallery goes here!</p>
         <GalleryList gallery={gallery} />
       </div>
     );
