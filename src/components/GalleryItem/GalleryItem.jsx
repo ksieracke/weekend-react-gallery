@@ -3,6 +3,8 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import { updateLikes } from "../../GalleryAPI/gallery.api";  
+import {Fab} from '@mui/material';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 
 function GalleryItem({pic}){
@@ -32,10 +34,10 @@ function GalleryItem({pic}){
             <p>{pic.title}</p>
             <div onClick={togglePicAndDescription}  data-testid="toggle">
                {showPic ?
-                <img src={pic.url} /> :<p>{pic.description}</p>
+                <img src={pic.url} /> :<p data-testid="description">{pic.description}</p>
                }
             </div>
-            <p>Likes: {likes}  <button data-testid="like" onClick={addLike}>Like</button></p>
+            <p>Likes: {likes}  <Fab size="small" color="primary" data-testid="like" onClick={addLike}><FavoriteIcon color="secondary" /></Fab></p>
         </div>
      )
 
