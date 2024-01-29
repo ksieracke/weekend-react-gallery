@@ -31,11 +31,11 @@ function GalleryItem({pic}){
 
      return(
         <div data-testid="galleryItem" style={{textAlign:'center', height:'350px', width: '300px'}} >
-            <p><h3>{pic.title}</h3></p>
-            <div onClick={togglePicAndDescription}   data-testid="toggle" >
+            <h3>{pic.title}</h3>
+            <div onClick={togglePicAndDescription}   data-testid="toggle" style={{overflow:'hidden'}} >
                {showPic ?
                 <img src={pic.url} style={{ width: '250px', height: '250px', alignContent:'center' }} /> :
-                <p style={{ width: '250px', height: '250px', alignContent: 'center',margin: '0 auto', lineHeight:'250px' }} data-testid="description">{pic.description}</p>
+                <p style={{ width: '250px', height: '250px', alignContent: 'center',margin: '0 auto',  wordWrap:'break-word', overflow:'hidden' }} data-testid="description">{pic.description}</p>
                }
             </div>
             <p>Likes: {likes}  <Fab size="small" color="primary" data-testid="like" onClick={addLike}><FavoriteIcon color="secondary" /></Fab></p>
