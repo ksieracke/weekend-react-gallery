@@ -31,14 +31,14 @@ function GalleryItem({pic}){
 
      return(
         <div data-testid="galleryItem" style={{textAlign:'center', height:'350px', width: '300px'}} >
-            <h3>{pic.title}</h3>
+            <h3 style={{color:'white'}}>{pic.title}</h3>
             <div onClick={togglePicAndDescription}   data-testid="toggle" style={{overflow:'hidden'}} >
                {showPic ?
-                <img src={pic.url} style={{ width: '250px', height: '250px', alignContent:'center' }} /> :
-                <p style={{ width: '250px', height: '250px', alignContent: 'center',margin: '0 auto',  wordWrap:'break-word', overflow:'hidden' }} data-testid="description">{pic.description}</p>
+                <img src={pic.url} style={{ width: '250px', height: '250px', alignContent:'center',border: '7px solid gold', borderRadius: '5px' }} /> :
+                <p style={{ width: '250px', height: '250px', alignContent: 'center',margin: '0 auto',  wordWrap:'break-word', overflow:'hidden',alignSelf:'center',color:'white' }} data-testid="description">{pic.description}</p>
                }
             </div>
-            <p>Likes: {likes}  <Fab size="small" color="primary" data-testid="like" onClick={addLike}><FavoriteIcon color="secondary" /></Fab></p>
+            <p style={{color:'white'}}>Likes: {likes}  <Fab size="small" color="primary" data-testid="like" onClick={addLike}><FavoriteIcon color="secondary" /></Fab></p>
         </div>
      )
 }
