@@ -35,7 +35,6 @@ function GalleryItem({pic}){
                }
             </div>
             <p>Likes: {likes}  <button onClick={addLike}>Like</button></p>
-
         </div>
      )
 
