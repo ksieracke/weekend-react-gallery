@@ -1,6 +1,8 @@
 //imports
 import React from "react";
 import { useState } from "react";
+import axios from "axios";
+import { updateLikes } from "../../GalleryAPI/gallery.api";  
 
 
 function GalleryItem({pic}){
@@ -11,11 +13,19 @@ function GalleryItem({pic}){
         setShowPic(!showPic);
      }
 
-     const addLike=(event)=>{
+     const addLike=()=>{
         console.log('like button clicked');
         setLikes(likes +1);
-
-     }
+        console.log(pic.id);
+        updateLikes(pic.id)
+            .then(()=>{
+                console.log('like updated');
+            })
+            .catch((err)=>{
+                console.error(err);
+                setLikes(likes);
+            });
+     };
 
      return(
         <div data-testID="galleryItem">

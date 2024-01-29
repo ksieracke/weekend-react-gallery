@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool.js')
 
+
 // PUT /gallery/like/:id
 router.put('/like/:id', (req, res) => {
   // code here
@@ -23,7 +24,7 @@ router.put('/like/:id', (req, res) => {
 // GET /gallery
 router.get('/', (req, res) => {
   // code here
-  const dbQuery = 'SELECT * FROM "gallery";';
+  const dbQuery = 'SELECT * FROM "gallery" ORDER BY "id"; ';
 
   pool
     .query(dbQuery)

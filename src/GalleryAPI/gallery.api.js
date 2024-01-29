@@ -1,9 +1,9 @@
 import axios from 'axios';
 
 export const fetchPics=()=>{
-    return axios.get('/api/pics')
+    return axios.get('/api/gallery')
 };
 
-export const updateLikes=(taskId)=>{
-    return axios.put(`/api/pics/${taskId}`);
-}
+export const updateLikes = (picId) => {
+    return axios.put(`/api/gallery/like/${picId}`);
+};
