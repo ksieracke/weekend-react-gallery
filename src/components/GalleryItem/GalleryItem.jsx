@@ -28,13 +28,14 @@ function GalleryItem({pic}){
      };
 
      return(
-        <div data-testID="galleryItem">
-            <div onClick={togglePicAndDescription}>
+        <div data-testid="galleryItem" >
+            <p>{pic.title}</p>
+            <div onClick={togglePicAndDescription}  data-testid="toggle">
                {showPic ?
                 <img src={pic.url} /> :<p>{pic.description}</p>
                }
             </div>
-            <p>Likes: {likes}  <button onClick={addLike}>Like</button></p>
+            <p>Likes: {likes}  <button data-testid="like" onClick={addLike}>Like</button></p>
         </div>
      )
 
