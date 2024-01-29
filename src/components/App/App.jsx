@@ -7,7 +7,7 @@ function App() {
 
     return (
       <div data-testid="app">
-        <header>
+        <header style={{textAlign: 'center'}}>
           <h1>The Many Faces of my Daughter Laura</h1>
         </header>
         <GalleryList  />

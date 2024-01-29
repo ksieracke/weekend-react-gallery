@@ -3,6 +3,7 @@ import React from 'react';
 import GalleryItem from '../GalleryItem/GalleryItem';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import {Grid} from '@mui/material';
 
 
 
@@ -26,12 +27,15 @@ function GalleryList(){
 
 
     return(
-        <div data-testId="galleryList">
+        <div data-testId="galleryList" >
+          <Grid container spacing={2} justifyContent={"center"} alignItems={"center"} >
             {(gallery).map((pic)=>{
                 return(
-                <GalleryItem key={pic.id} pic={pic} />
-                
+                  <Grid item key={pic.id} xs={3} md={3} lg={3}> 
+                <GalleryItem  pic={pic} />
+                </Grid>
             )})}
+            </Grid>
         </div>
         )
     }

@@ -30,19 +30,17 @@ function GalleryItem({pic}){
      };
 
      return(
-        <div data-testid="galleryItem" >
-            <p>{pic.title}</p>
-            <div onClick={togglePicAndDescription}  data-testid="toggle">
+        <div data-testid="galleryItem" style={{textAlign:'center', height:'350px', width: '300px'}} >
+            <p><h3>{pic.title}</h3></p>
+            <div onClick={togglePicAndDescription}   data-testid="toggle" >
                {showPic ?
-                <img src={pic.url} /> :<p data-testid="description">{pic.description}</p>
+                <img src={pic.url} style={{ width: '250px', height: '250px', alignContent:'center' }} /> :
+                <p style={{ width: '250px', height: '250px', alignContent: 'center',margin: '0 auto', lineHeight:'250px' }} data-testid="description">{pic.description}</p>
                }
             </div>
             <p>Likes: {likes}  <Fab size="small" color="primary" data-testid="like" onClick={addLike}><FavoriteIcon color="secondary" /></Fab></p>
         </div>
      )
-
-
-
 }
 
 export default GalleryItem;
